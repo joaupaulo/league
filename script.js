@@ -1,20 +1,37 @@
-var ground = document.querySelector("body");
-var imagess = ["url('./images/wolfsburg.jpg')","url('./images/chmp.jpg')","url('./images/borussi.jpg')"];
+let cont = document.querySelector(".sea");
 
 
-function show() {
-   for(i=0; i < imagess.length ; i++ ) { 
-ground.style.backgroundImage = imagess[i]
-}
- }
- 
+function gerar (id , num ) {
+	fetch(`http://api.football-data.org/v2/players/${id}/matches` , {
+	"headers":  {
+		"X-Auth-Token":"dc27d36b147a479bae295e494c925263"
 
-
-function mudar()  { 
-show();
+	}
+}).then( r => r.json()).then(r => criar(r,num));
 
 }
 
 
-setInterval(mudar,1000); 
+function jogadores() {
+	
+	let primeiro = Math.round(Math.random() * 50)
+	let segundo  = Math.round(Math.random() * 50)
+	
+	gerar (primeiro,1);
+	gerar (segundo,2);
+	
+}
 
+
+
+function criar(r,num) {
+
+	let play = cont.querySelector(`.box${num}`)
+	let name = play.querySelector("h1");
+	name.textContent=r.player.name
+
+
+		
+}
+
+jogadores()
