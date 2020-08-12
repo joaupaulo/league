@@ -14,7 +14,7 @@ function gerar (id , num ) {
 
 function jogadores() {
 	
-	let primeiro = Math.round(Math.random() * 10)
+	let primeiro = Math.round(Math.random() * 15)
 	let segundo  = Math.round(Math.random() * 10)
 	
 	gerar (primeiro,1);
@@ -22,7 +22,7 @@ function jogadores() {
 	
 }
 
-jogadores()
+
 
 function criar(r,num) {
 
@@ -36,11 +36,10 @@ nacion.textContent = ` NACIONALIDADE :  ${r.player.nationality}`
 	let numero = play.querySelector(".numero");
 	numero.textContent = ` NÚMERO DA CAMISA  :  ${r.player.shirtNumber}`
 	let partidas = play.querySelector(".partidas");
-	partidas.textContent = ` DADOS DA PARTIDA : ${r.player.matches}`
+	partidas.textContent = ` DATA DE ANIVERSÁRIO : ${r.player.dateOfBirth}`
 	
 
 
-		
 }
 
 
