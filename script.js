@@ -14,24 +14,33 @@ function gerar (id , num ) {
 
 function jogadores() {
 	
-	let primeiro = Math.round(Math.random() * 50)
-	let segundo  = Math.round(Math.random() * 50)
+	let primeiro = Math.round(Math.random() * 10)
+	let segundo  = Math.round(Math.random() * 10)
 	
 	gerar (primeiro,1);
 	gerar (segundo,2);
 	
 }
 
-
+jogadores()
 
 function criar(r,num) {
 
 	let play = cont.querySelector(`.box${num}`)
 	let name = play.querySelector("h1");
 	name.textContent=r.player.name
+	let position = play.querySelector(".posição");
+	position.textContent = ` POSIÇÃO : ${r.player.position} `
+	let nacion = play.querySelector(".nacionalidade");
+nacion.textContent = ` NACIONALIDADE :  ${r.player.nationality}`
+	let numero = play.querySelector(".numero");
+	numero.textContent = ` NÚMERO DA CAMISA  :  ${r.player.shirtNumber}`
+	let partidas = play.querySelector(".partidas");
+	partidas.textContent = ` DADOS DA PARTIDA : ${r.player.matches}`
+	
 
 
 		
 }
 
-jogadores()
+
